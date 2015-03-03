@@ -1,0 +1,10 @@
+Triangle Type Testing Program
+
+Version 1.0 2015
+
+Tommy Bountham, Cynthia Wilhelm
+
+TTTP is a PHP-based program which prompts a user for values comprising 
+the sides of a triangle and determines whether the values create a valid 
+triangle and if so, whether the triangle is of type equilateral, 
+isoceles, or scalene.
