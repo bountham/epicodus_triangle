@@ -33,7 +33,16 @@ class Triangle  {
      function setC($newC) {
          $this->sideC = $newC;
      }
-
 }
+
+$tempA = $_GET['sideA'];
+$tempB = $_GET['sideB'];
+$tempC = $_GET['sideC'];
+
+$tempTriangle = new Triangle($tempA, $tempB, $tempC);
+
+echo $tempTriangle->getA();
+echo $tempTriangle->getB();
+echo $tempTriangle->getC();
 
 ?>
