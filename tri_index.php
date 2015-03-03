@@ -33,16 +33,28 @@ class Triangle  {
      function setC($newC) {
          $this->sideC = $newC;
      }
+
+     function getTriangleType() {
+         if(($this->sideA == $this->sideB) AND ($this->sideA == $this->sideC)) {
+             return "equilateral";
+         } else if(($this->sideA == $this->sideB) OR
+            ($this->sideA == $this->sideC) OR ($this->sideB == $this->sideC)) {
+             return "isoceles";
+         } else {
+             return "scalene";
+         }
+     }
 }
 
 $tempA = $_GET['sideA'];
 $tempB = $_GET['sideB'];
 $tempC = $_GET['sideC'];
 
-$tempTriangle = new Triangle($tempA, $tempB, $tempC);
-
-echo $tempTriangle->getA();
-echo $tempTriangle->getB();
-echo $tempTriangle->getC();
-
+if (($tempA + $tempB < $tempC) OR ($tempA + $tempC < $tempB) OR
+    ($tempB + $tempC < $tempA)) {
+        echo "Values do not create a valid triangle.";
+    } else {
+        $tempTriangle = new Triangle($tempA, $tempB, $tempC);
+        echo "Your triangle is " . $tempTriangle->getTriangleType() . "!";
+    }
 ?>
